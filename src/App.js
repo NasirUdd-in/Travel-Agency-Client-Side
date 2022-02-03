@@ -1,14 +1,33 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
-import Header from './Components/Header/Header';
-import Banner from './Components/Home/Banner/Banner';
+import Header from './Components/Shared/Header/Header';
 import Home from './Components/Home/Home';
+import Footer from './Components/Shared/Footer/Footer';
+import Login from './Components/Login/Login';
+import NotFound from './Components/NotFound/NotFound';
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
-      <Home></Home>
+      <Router>
+        <Header></Header>
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+          <Route path="/login">
+           <Login></Login>
+          </Route>
+          <Router path="*">
+            <NotFound></NotFound>
+          </Router>
+        </Switch>
+        <Footer></Footer>
+      </Router>
+
     </div>
   );
 }
