@@ -3,8 +3,9 @@ import './App.css';
 import Header from './Components/Shared/Header/Header';
 import Home from './Components/Home/Home';
 import Footer from './Components/Shared/Footer/Footer';
-import Login from './Components/Login/Login';
 import NotFound from './Components/NotFound/NotFound';
+import Login from './Components/Login/Login';
+
 
 function App() {
   return (
